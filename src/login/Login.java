@@ -1,4 +1,4 @@
-package sample;
+package login;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -7,8 +7,6 @@ import javafx.stage.Stage;
 import javafx.geometry.Pos;
 import javafx.geometry.Insets;
 import javafx.scene.text.Text;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
@@ -16,9 +14,9 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
 
-public class Main extends Application {
+
+public class Login extends Application {
 
   public static void main(String[] args) {
     launch(args);
@@ -45,6 +43,7 @@ public class Main extends Application {
     grid.add(hbBtn, 1, 4);
 
     final Text actionTarget = new Text();
+    actionTarget.setId("actiontarget");
     grid.add(actionTarget, 1, 6);
 
     // makes the button action/event
@@ -52,14 +51,13 @@ public class Main extends Application {
 
       @Override
       public void handle(ActionEvent e) {
-        actionTarget.setFill(Color.FIREBRICK);
         actionTarget.setText("Sign in button pressed!");
       }
     });
 
     // title inside window with font specifications;
     Text sceneTitle = new Text("Welcome");
-    sceneTitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+    sceneTitle.setId("welcome-text");
     grid.add(sceneTitle, 0, 0, 2, 1); // column, row, column span, row span
 
     // creates label for an input box
@@ -85,10 +83,13 @@ public class Main extends Application {
     Scene scene = new Scene(grid, 300, 275);
     primaryStage.setScene(scene);
 
+    // allows .java to "see" that there is a CSS file and use it
+    scene.getStylesheets().add(Login.class.getResource("Login.css").toExternalForm());
+
     // calls and makes the window actually appear
     primaryStage.show();
-  }// end javaFX "start" method
 
+  }// end javaFX "start" method
 
   // the start function for javaFX that was for the 1st section; old stuff
   /*@Override
