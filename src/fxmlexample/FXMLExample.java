@@ -1,32 +1,58 @@
-package login;
+package fxmlexample;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import javafx.geometry.Pos;
-import javafx.geometry.Insets;
-import javafx.scene.text.Text;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.PasswordField;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.control.Button;
-import javafx.scene.layout.HBox;
 
 
-public class Login extends Application {
+public class FXMLExample extends Application {
 
   public static void main(String[] args) {
     launch(args);
   }// end main method
 
-  // creates a blank windows with a title name in the title-bar
+  // creates a blank windows with a title name in the title-bar - uses .css, Controller, and .fxml
+  @Override
+  public void start(Stage primaryStage) throws Exception {
+    Parent root = FXMLLoader.load(getClass().getResource("example.fxml"));
+
+    // sets the scene; class Scene, and object scene; each "scene" can be different
+    Scene scene = new Scene(root, 300, 275);
+
+    primaryStage.setTitle("FXML Welcome");
+    primaryStage.setScene(scene);
+
+    // call to show function - makes the window actually appear
+    primaryStage.show();
+
+  }// end javaFX "start" method
+
+}
+
+ /* the start function for javaFX that was for the 1st tutorial section; old stuff
   @Override
   public void start(Stage primaryStage) {
-    primaryStage.setTitle("JavaFX Welcome");
+    primaryStage.setTitle("Hello World!");
+    Button btn = new Button();
+    btn.setText("Say 'Hello World'");
+    btn.setOnAction(new EventHandler<ActionEvent>() {
 
+      @Override
+      public void handle(ActionEvent event) {
+        System.out.println("Hello World!");
+      }
+    });
+    // needs import scene.layout.StackPane
+    StackPane root = new StackPane();
+    root.getChildren().add(btn);
+    primaryStage.setScene(new Scene(root, 300, 250));
+    primaryStage.show();
+  }*/
+
+
+/*This was put into the fxml file, version 1 through 3
     // accesses and customizes what goes in the "primary stage", the new blank window
     GridPane grid = new GridPane();
     grid.setAlignment(Pos.CENTER);
@@ -77,39 +103,8 @@ public class Login extends Application {
     grid.add(pwBox, 1, 2);
 
     // shows all grid lines
-    //grid.setGridLinesVisible(true);
+    //grid.setGridLinesVisible(true);  //end of what was moved to the fxml file*/
 
-    // sets the scene; class Scene, and object scene; each "scene" can be different
-    Scene scene = new Scene(grid, 300, 275);
-    primaryStage.setScene(scene);
-
+    /*Not necessary as of tutorial 4
     // allows .java to "see" that there is a CSS file and use it
-    scene.getStylesheets().add(Login.class.getResource("Login.css").toExternalForm());
-
-    // calls and makes the window actually appear
-    primaryStage.show();
-
-  }// end javaFX "start" method
-
-  // the start function for javaFX that was for the 1st section; old stuff
-  /*@Override
-  public void start(Stage primaryStage) {
-    primaryStage.setTitle("Hello World!");
-    Button btn = new Button();
-    btn.setText("Say 'Hello World'");
-    btn.setOnAction(new EventHandler<ActionEvent>() {
-
-      @Override
-      public void handle(ActionEvent event) {
-        System.out.println("Hello World!");
-      }
-    });
-    // needs import scene.layout.StackPane
-    StackPane root = new StackPane();
-    root.getChildren().add(btn);
-    primaryStage.setScene(new Scene(root, 300, 250));
-    primaryStage.show();
-  }*/
-}
-
-
+    scene.getStylesheets().add(FXMLExample.class.getResource("FXMLExample.css").toExternalForm());*/
