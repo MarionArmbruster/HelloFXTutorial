@@ -1,18 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version = "1.0" encoding = "UTF-8"?>
 <?language javascript?>
+
+<!--******************************************************
+ *fxml_example.fxml file                                 *
+ *                                                       *
+ *main fx file where the control and design is contained *
+ *****************************************************/-->
 
 <?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
-<GridPane xmlns:fx = "http://javafx.com/fxml"
+<GridPane fx:controller = "fxmlexample.FXMLExampleController"
+  xmlns:fx = "http://javafx.com/fxml"
   alignment = "center" hgap = "10" vgap = "10"
   styleClass = "root">
+
+  <!--Original said "Calling the JavaScript"-->
   <fx:script>
     function handleSubmitButtonAction() {
-      actionTarget.setText("Calling the JavaScript");
+        actionTarget.setText("Sign in button pressed");
     }
   </fx:script>
 
@@ -38,10 +46,10 @@
       onAction = "handleSubmitButtonAction(event);"/>
   </HBox>
 
-  <Text fx:id = "actiontarget"
+  <Text fx:id = "actionTarget"
     GridPane.columnIndex = "1" GridPane.rowIndex = "6"/>
 
-  // uses java.net library
+  <!--uses java.net library-->
   <stylesheets>
     <URL value = "@Login.css" />
   </stylesheets>

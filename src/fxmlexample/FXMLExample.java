@@ -1,3 +1,9 @@
+/*********************************************************
+ *FXMLExample.java file - driver class                                   *
+ *                                                       *
+ *                                                       *
+ *********************************************************/
+
 package fxmlexample;
 
 import javafx.application.Application;
@@ -9,14 +15,10 @@ import javafx.stage.Stage;
 
 public class FXMLExample extends Application {
 
-  public static void main(String[] args) {
-    launch(args);
-  }// end main method
-
   // creates a blank windows with a title name in the title-bar - uses .css, Controller, and .fxml
   @Override
   public void start(Stage primaryStage) throws Exception {
-    Parent root = FXMLLoader.load(getClass().getResource("example.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("fxml_example.fxml"));
 
     // sets the scene; class Scene, and object scene; each "scene" can be different
     Scene scene = new Scene(root, 300, 275);
@@ -28,6 +30,10 @@ public class FXMLExample extends Application {
     primaryStage.show();
 
   }// end javaFX "start" method
+
+  public static void main(String[] args) {
+    launch(args);
+  }// end main method
 
 }
 
@@ -69,7 +75,7 @@ public class FXMLExample extends Application {
     grid.add(hbBtn, 1, 4);
 
     final Text actionTarget = new Text();
-    actionTarget.setId("actiontarget");
+    actionTarget.setId("actionTarget");
     grid.add(actionTarget, 1, 6);
 
     // makes the button action/event

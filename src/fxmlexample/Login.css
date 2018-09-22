@@ -8,6 +8,10 @@
 /* each "period" is a class, where it applied to all objects of that type
    each "hashtag" is an ID, like a field, that is specific to the object referenced*/
 
+root {
+  display: block;
+}
+
 .root {
   -fx-background-image: url("grey_Background.jpg");
 }
@@ -27,9 +31,9 @@
   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
 }
 
-.button:hover {
+/*.button:hover {
   -fx-background-color: linear-gradient(#2A5058, #61a2b1);
-}
+}*/
 
 #welcome-text {
   -fx-font-size: 32px;
@@ -38,7 +42,7 @@
   -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
 }
 
-#actiontarget {
+#actionTarget {
   -fx-fill: FIREBRICK;
   -fx-font-weight: bold;
   -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
