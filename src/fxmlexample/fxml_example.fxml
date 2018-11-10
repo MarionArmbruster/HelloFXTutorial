@@ -2,9 +2,14 @@
 <?language javascript?>
 
 <!--******************************************************
- *fxml_example.fxml file                                 *
+ * File: fxml_example.fxml                               *
+ * Author: Marion Armbruster                             *
+ * Date: 21 September 2018                               *
  *                                                       *
- *main fx file where the control and design is contained *
+ * The fxml file where the "view" and design layout of   *
+ * the gui should be contained. This fxml file           *
+ * corresponds with the FMXLExampleController.java and   *
+ * FXMLExample.java files, not ColorfulCircles.          *                 *
  *****************************************************/-->
 
 <?import java.net.*?>
@@ -43,7 +48,7 @@
   <HBox spacing = "10" alignment = "bottom_right"
     GridPane.columnIndex = "1" GridPane.rowIndex = "4">
     <Button text = "Sign In"
-      onAction = "handleSubmitButtonAction(event);"/>
+      onAction = "#handleSubmitButtonAction"/>
   </HBox>
 
   <Text fx:id = "actionTarget"

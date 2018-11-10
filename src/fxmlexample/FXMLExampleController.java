@@ -1,7 +1,9 @@
 /*********************************************************
- *Controller.java file                                   *
+ * File: FXMLExampleController.java                      *
+ * Author: Marion Armbruster                             *
+ * Date: 12 September 2018                               *
  *                                                       *
- *                                                       *
+ * The control of the FXMLExample program.               *
  *********************************************************/
 
 package fxmlexample;
@@ -15,8 +17,7 @@ public class FXMLExampleController {
   @FXML
   private Text actionTarget;
 
-  // method that is supposed to handle and control what happens when the button is pressed
-  // however, unable to complete method call and "unused method" results
+  // A method that handles and controls what happens when the button is pressed
   @FXML
   protected void handleSubmitButtonAction(ActionEvent event) {
     actionTarget.setText("Sign in button pressed");
