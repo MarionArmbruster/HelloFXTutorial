@@ -1,24 +1,17 @@
-/***************************************************
-* File: Login.css                                  *
-* Author: Marion Armbruster                        *
-* Date: 6 September 2018                             *
-*                                                  *
-* A CSS file that separates the appearance and     *
-* style of the program from the code (data) and the*
-* logic. It allows for the styling of the various  *
-* objects and other items displayed                *
-****************************************************/
+/*********************************************************
+ *CSS file that separates the appearance and style from  *
+ *the code in the .java                                  *
+ *                                                       *
+ *Allows for the styling of the various objects displayed*
+ *********************************************************/
 
-/* Each "period" denotes a class, where it applies to
-all objects of that type. Each "hashtag" is an ID,
-similar to a field, that is specific to the object
-referenced */
+/* each "period" is a class, where it applied to all objects of that type
+   each "hashtag" is an ID, like a field, that is specific to the object referenced*/
 
 root {
   display: block;
 }
 
-/*Affects the root scene, in which it adds a background picture.*/
 .root {
   -fx-background-image: url("grey_Background.jpg");
 }
@@ -38,7 +31,6 @@ root {
   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
 }
 
-/* an extra effect on the button that is optional*/
 /*.button:hover {
   -fx-background-color: linear-gradient(#2A5058, #61a2b1);
 }*/
